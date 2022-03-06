@@ -88,7 +88,14 @@
                 <td th:text="${users.username}">Username</td>
 <!--                <td th:text="${users.lastName}">Last Name</td>-->
                 <td th:text="${users.password}">Password</td>
-                <td><a th:href="@{users/{userId}(userId=${users.userId})}" class="btn btn-danger">Delete</a></td>
+                <td><a th:href="@{/users/{userId}(userId=${users.userId})}" class="btn btn-danger">Delete</a></td>
+                <td>
+                    <div class="container">
+                        <form class="form-signin" method="delete" action="/users/{userId}">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">detete</button>
+                        </form>
+                    </div>
+                </td>
             </tr>
             </tbody>
         </table>

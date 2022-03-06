@@ -98,13 +98,14 @@ public class TestController {
     }
     @DeleteMapping("users/{userId}")
     public void delete (@PathVariable("userId")Long userId){
-//        Boolean exists= usersRepository.existsById(userId);
-//        if (!exists){
-//            throw new IllegalStateException("user with id"+userId+"not exists" );
-//        }
+        Boolean exists= usersRepository.existsById(userId);
+        if (!exists){
+            throw new IllegalStateException("user with id"+userId+"not exists" );
+        }
        usersRepository.deleteById(userId);
+
     }
-//TODO:Courses Post and Get Mapping
+    //TODO:Courses Post and Get Mapping
     @GetMapping("/getCourse")
     public String getCourse(Model model){
         List<Course> getCourse= courseRepository.findAll();
@@ -118,13 +119,13 @@ public class TestController {
 //        return "admin/regist_signup";
 //    }
     @PostMapping("/registerCourseProcess")
-    public String postCourses(@RequestBody Course course){
-        courseRepository.save(course);
+    public String postCourses(Course courses){
+        courseRepository.save(courses);
         return "admin/register_course_sucess";
     }
     @GetMapping("/register_course")
     public String regCourse(Model model){
-        model.addAttribute("course", new Course());
+        model.addAttribute("courses", new Course());
         return "admin/register_course";
     }
 }

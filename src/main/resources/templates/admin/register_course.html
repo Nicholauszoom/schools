@@ -14,12 +14,18 @@
 </head>
 <body>
 <div>
-    <h1>Admin Register Courses</h1>
+    <h1>Register Courses</h1>
 </div>
 
-<form th:action="@{/registerCourseProcess}" th:object="${course}"
+<form th:action="@{/registerCourseProcess}" th:object="${courses}"
       method="post" style="max-width: 600px; margin: 0 auto;">
     <div class="m-3">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">CourseId</label>
+            <div class="series1">
+                <input type="Long" th:field="*{id}" class="form-control" required minlength="1" maxlength="20"/>
+            </div>
+        </div>
 <!--        <div class="form-group row">-->
 <!--            <label class="col-4 col-form-label">CourseId</label>-->
 <!--            <div class="series1">-->
@@ -45,7 +51,7 @@
         </div>
 
             <div>
-                <button type="submit" class="btn btn-primary">SignUp Courses</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
 
     </div>

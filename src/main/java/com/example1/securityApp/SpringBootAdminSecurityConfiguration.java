@@ -79,7 +79,10 @@ public class SpringBootAdminSecurityConfiguration extends WebSecurityConfigurerA
     public void configure(HttpSecurity http) throws Exception {
         http
                 .antMatcher("/admin/**")
-                .authorizeRequests().antMatchers("/admin/dashboard").authenticated().anyRequest().authenticated()
+                .authorizeRequests().antMatchers("/admin/dashboard")
+                .authenticated()
+                .antMatchers("/registerCourseProcess").authenticated()
+                .anyRequest().authenticated()
                 .and().formLogin().loginPage("/admin/login")
                 .defaultSuccessUrl("/admin/dashboard", true)
                // .failureUrl("/admin/login?adminerror=true")

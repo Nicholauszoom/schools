@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
-@EqualsAndHashCode
 public class Course {
     @SequenceGenerator(name = "sequence_course",
     sequenceName = "sequence_course",
@@ -18,6 +16,18 @@ public class Course {
   private Long id;
   private String CourseName;
   private String Sylubus;
+
+
+    public Course(Long id, String courseName, String sylubus) {
+        CourseName = courseName;
+        Sylubus = sylubus;
+        this.id=id;
+
+    }
+
+    public Course() {
+
+    }
 
     public Long getId() {
         return id;
