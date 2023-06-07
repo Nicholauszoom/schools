@@ -1,0 +1,1 @@
+# schools The project concern on school management system was developed by by me NicholausZoom ,functionalities include Java 11 with SpringBoot framework environment, postgreSql Database environment coonfigured, Spring Security applied, front end bootstrap
